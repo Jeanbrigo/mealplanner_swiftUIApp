@@ -11,6 +11,10 @@
 		A76FE25129B5468B0077A4EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76FE25029B5468B0077A4EE /* ContentView.swift */; };
 		A76FE25329B5468E0077A4EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76FE25229B5468E0077A4EE /* Assets.xcassets */; };
 		A76FE25629B5468E0077A4EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76FE25529B5468E0077A4EE /* Preview Assets.xcassets */; };
+		A76FE25D29B546F20077A4EE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76FE25C29B546F20077A4EE /* Models.swift */; };
+		A76FE25F29B547D70077A4EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76FE25E29B547D70077A4EE /* ViewModel.swift */; };
+		A76FE26329B55B150077A4EE /* NewMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76FE26229B55B150077A4EE /* NewMealView.swift */; };
+		A76FE26529B563B30077A4EE /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76FE26429B563B30077A4EE /* ShowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		A76FE25029B5468B0077A4EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A76FE25229B5468E0077A4EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A76FE25529B5468E0077A4EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A76FE25C29B546F20077A4EE /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		A76FE25E29B547D70077A4EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A76FE26229B55B150077A4EE /* NewMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMealView.swift; sourceTree = "<group>"; };
+		A76FE26429B563B30077A4EE /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
+		A76FE26629B57DC90077A4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +60,13 @@
 		A76FE24D29B5468B0077A4EE /* mealplanner */ = {
 			isa = PBXGroup;
 			children = (
+				A76FE26629B57DC90077A4EE /* Info.plist */,
 				A76FE24E29B5468B0077A4EE /* mealplannerApp.swift */,
+				A76FE26429B563B30077A4EE /* ShowView.swift */,
 				A76FE25029B5468B0077A4EE /* ContentView.swift */,
+				A76FE26229B55B150077A4EE /* NewMealView.swift */,
+				A76FE25C29B546F20077A4EE /* Models.swift */,
+				A76FE25E29B547D70077A4EE /* ViewModel.swift */,
 				A76FE25229B5468E0077A4EE /* Assets.xcassets */,
 				A76FE25429B5468E0077A4EE /* Preview Content */,
 			);
@@ -137,8 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76FE25D29B546F20077A4EE /* Models.swift in Sources */,
 				A76FE25129B5468B0077A4EE /* ContentView.swift in Sources */,
+				A76FE25F29B547D70077A4EE /* ViewModel.swift in Sources */,
+				A76FE26329B55B150077A4EE /* NewMealView.swift in Sources */,
 				A76FE24F29B5468B0077A4EE /* mealplannerApp.swift in Sources */,
+				A76FE26529B563B30077A4EE /* ShowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +287,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"mealplanner/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = mealplanner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -297,7 +315,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"mealplanner/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = mealplanner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
