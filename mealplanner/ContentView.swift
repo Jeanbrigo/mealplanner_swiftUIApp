@@ -30,12 +30,25 @@ struct HomeView: View {
                     NavigationLink(
                         destination: ShowView(item: item),
                         label: {
-                            VStack(alignment: .leading) {
-                                Text(item.name)
-                                Text(item.imageURL).font(.caption).foregroundColor(.gray)
+                            HStack {
+                                AsyncImage(url: URL(string: item.imageURL),
+                                           content: { image in
+                                               image.resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(maxWidth: 300, maxHeight: 100, alignment: .leading)
+                                           },
+                                           placeholder: {
+                                               ProgressView()
+                                           }
+                                       )
+                                VStack(alignment: .center) {
+                                    Text(item.name).font(.system(size: 25)).foregroundColor(.white)
+                                    Text(item.dayToEat).font(.system(size: 25)).foregroundColor(.white)
+                                }.frame(maxWidth: 800)
+                                
                             }
                             
-                        })
+                        }).background(Color.blue)
                 }.onDelete(perform: deleteMeal)
                 
             }.listStyle(InsetListStyle())

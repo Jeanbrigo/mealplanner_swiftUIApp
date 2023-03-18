@@ -78,7 +78,7 @@ struct NewMealView: View {
                 
                 isPresented.toggle()
                 viewModel.fetchMeals()
-                viewModel.fetchMeals()
+
                     
             } else {
                 isAlert.toggle()
