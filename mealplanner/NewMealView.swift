@@ -46,7 +46,7 @@ struct NewMealView: View {
                         .padding(.bottom)
                         .foregroundColor(Color.blue)
                     
-                    TextField("Ingredients", text: $ingredients)
+                    TextField("Ingredients", text: $ingredients, axis: .vertical)
                         .padding()
                         .background(Color.white)
                         .cornerRadius(6)
