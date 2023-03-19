@@ -23,30 +23,35 @@ struct NewMealView: View {
                 VStack(alignment: .leading) {
                     Text("Add a meal")
                         .font(Font.system(size: 16, weight: .bold))
+                        .foregroundColor(Color.yellow)
                     
                     TextField("Name", text: $name)
                         .padding()
                         .background(Color.white)
                         .cornerRadius(6)
                         .padding(.bottom)
+                        .foregroundColor(Color.blue)
                     
                     TextField("Image URL", text: $imageURL)
                         .padding()
                         .background(Color.white)
                         .cornerRadius(6)
                         .padding(.bottom)
+                        .foregroundColor(Color.blue)
                     
                     TextField("Which Day To Eat", text: $dayToEat)
                         .padding()
                         .background(Color.white)
                         .cornerRadius(6)
                         .padding(.bottom)
+                        .foregroundColor(Color.blue)
                     
                     TextField("Ingredients", text: $ingredients)
                         .padding()
                         .background(Color.white)
                         .cornerRadius(6)
                         .padding(.bottom)
+                        .foregroundColor(Color.blue)
                     Spacer()
                     
                 }.padding()
@@ -57,15 +62,16 @@ struct NewMealView: View {
                     })
             }
             
-            .navigationBarTitle("New meal", displayMode: .inline)
+            .navigationTitle("New meal")
             .navigationBarItems(leading: leading, trailing: trailing)
+            .background(Color.blue)
         }
     }
     var leading: some View {
         Button(action: {
             isPresented.toggle()
         }, label: {
-            Text("Cancel")
+            Text("Cancel").foregroundColor(Color.yellow)
         })
     }
     
@@ -85,7 +91,7 @@ struct NewMealView: View {
             }
             
         }, label: {
-            Text("Add")
+            Text("Add").foregroundColor(Color.yellow)
         })
     }
 }

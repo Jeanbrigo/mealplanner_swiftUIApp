@@ -20,32 +20,45 @@ struct ShowView: View {
         ZStack {
             Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all)
             VStack(alignment: .leading) {
-                Text("Add a meal")
-                    .font(Font.system(size: 16, weight: .bold))
-                
+                AsyncImage(url: URL(string: item.imageURL),
+                           content: { image in
+                    image.resizable().border(Color.yellow, width: 5)
+                        .cornerRadius(10)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: 600, maxHeight: 200, alignment: .center)
+                                    .padding()
+                           },
+                           placeholder: {
+                               ProgressView()
+                           }
+                       )
                 TextField("Name", text: $name)
                     .padding()
                     .background(Color.white)
                     .cornerRadius(6)
                     .padding(.bottom)
+                    .foregroundColor(Color.blue)
                 
                 TextField("Image URL", text: $imageURL)
                     .padding()
                     .background(Color.white)
                     .cornerRadius(6)
                     .padding(.bottom)
+                    .foregroundColor(Color.blue)
                 
                 TextField("Which Day To Eat", text: $dayToEat)
                     .padding()
                     .background(Color.white)
                     .cornerRadius(6)
                     .padding(.bottom)
+                    .foregroundColor(Color.blue)
                 
                 TextField("Ingredients", text: $ingredients)
                     .padding()
                     .background(Color.white)
                     .cornerRadius(6)
                     .padding(.bottom)
+                    .foregroundColor(Color.blue)
                 Spacer()
                 
             }.padding()
@@ -59,8 +72,10 @@ struct ShowView: View {
                 
         }
         
-        .navigationBarTitle("Edit meal", displayMode: .inline)
+        .navigationTitle("Edit meal")
         .navigationBarItems(trailing: trailing)
+        .accentColor(Color.yellow)
+        .background(Color.blue)
     }
     var trailing: some View {
         Button(action: {
@@ -73,7 +88,7 @@ struct ShowView: View {
             viewModel.fetchMeals()
 
         }, label: {
-            Text("Save")
+            Text("Save").foregroundColor(Color.yellow)
         })
     }
 }

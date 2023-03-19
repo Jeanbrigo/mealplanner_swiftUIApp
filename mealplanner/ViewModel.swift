@@ -14,6 +14,8 @@ class ViewModel: ObservableObject {
     
     init() {
         fetchMeals()
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.systemYellow]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.systemYellow]
     }
     
     //MARK: - Retrieve data

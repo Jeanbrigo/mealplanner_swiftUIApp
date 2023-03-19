@@ -24,7 +24,7 @@ struct HomeView: View {
     var body: some View {
         
         NavigationView {
-            
+
             List {
                 ForEach(viewModel.items, id: \.id) { item in
                     NavigationLink(
@@ -35,25 +35,27 @@ struct HomeView: View {
                                            content: { image in
                                                image.resizable()
                                                     .aspectRatio(contentMode: .fit)
-                                                    .frame(maxWidth: 300, maxHeight: 100, alignment: .leading)
+                                                    .frame(maxWidth: 100, maxHeight: 100, alignment: .leading).border(Color.yellow, width: 4)
+                                                    .cornerRadius(10)
                                            },
                                            placeholder: {
                                                ProgressView()
                                            }
                                        )
                                 VStack(alignment: .center) {
-                                    Text(item.name).font(.system(size: 25)).foregroundColor(.white)
+                                    Text(item.name).font(.system(size: 25, weight: .bold)).foregroundColor(.white).multilineTextAlignment(.center)
                                     Text(item.dayToEat).font(.system(size: 25)).foregroundColor(.white)
                                 }.frame(maxWidth: 800)
                                 
                             }
                             
-                        }).background(Color.blue)
+                        }).listRowBackground(Color.blue)
                 }.onDelete(perform: deleteMeal)
                 
-            }.listStyle(InsetListStyle())
-            
-            .navigationBarTitle("Meal Planner")
+                
+                
+            }
+            .navigationTitle("Meal Planner")
             .navigationBarItems(trailing: plusButton)
             .task {
                 self.viewModel.fetchMeals()
@@ -61,10 +63,12 @@ struct HomeView: View {
             .refreshable{
                 self.viewModel.fetchMeals()
             }
+            .foregroundColor(Color.yellow)
+            .accentColor(Color.yellow)
             
         }.sheet(isPresented: $isPresentedNewMeal, content: {
             NewMealView(isPresented: $isPresentedNewMeal, name: $name, imageURL: $imageURL, dayToEat: $dayToEat, ingredients: $ingredients)
-        })
+        }).accentColor(Color.yellow)
 
     }
     
