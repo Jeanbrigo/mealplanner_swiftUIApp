@@ -51,12 +51,16 @@ struct HomeView: View {
                             
                         }).listRowBackground(Color.blue)
                 }.onDelete(perform: deleteMeal)
+                    .onMove{(indexSet, index) in
+                        self.viewModel.items.move(fromOffsets: indexSet, toOffset: index)
+                    }
                 
                 
                 
             }
             .navigationTitle("Meal Planner")
             .navigationBarItems(trailing: plusButton)
+            .navigationBarItems(trailing: EditButton())
             .task {
                 self.viewModel.fetchMeals()
             }
@@ -92,6 +96,8 @@ struct HomeView: View {
             Image(systemName: "plus")
         })
     }
+    
+    
 }
 
 //struct ContentView_Previews: PreviewProvider {
